@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+<h1><%= aluno ? 'Editar aluno' : 'Novo aluno' %></h1>
+
+<form action="<%= aluno ? '/alunos/' + aluno.id : '/alunos' %>" method="POST" class="form-cadastro">
+  <label for="nome">Nome completo</label>
+  <input type="text" id="nome" name="nome" required value="<%= aluno ? aluno.nome : '' %>" />
+
+  <label for="matricula">Matrícula</label>
+  <input type="text" id="matricula" name="matricula" required value="<%= aluno ? aluno.matricula : '' %>" />
+
+  <label for="cursoId">Curso</label>
+  <select id="cursoId" name="cursoId" required>
+    <option value="">Selecione...</option>
+    <% cursos.forEach(function(c) { %>
+      <option value="<%= c.id %>" <%= aluno && aluno.cursoId === c.id ? 'selected' : '' %>><%= c.nome %></option>
+    <% }); %>
+  </select>
+
+  <label for="dataIngresso">Data de ingresso</label>
+  <input type="date" id="dataIngresso" name="dataIngresso" required value="<%= aluno ? aluno.dataIngresso : '' %>" />
+
+  <label for="status">Status</label>
+  <select id="status" name="status" required>
+    <% ['ativo', 'trancado', 'concluido'].forEach(function(s) { %>
+      <option value="<%= s %>" <%= aluno && aluno.status === s ? 'selected' : '' %>><%= s %></option>
+    <% }); %>
+  </select>
+
+  <div class="acoes-form">
+    <input type="submit" value="<%= aluno ? 'Salvar alterações' : 'Cadastrar' %>" class="btn" />
+    <a href="/alunos" class="btn btn-secundario">Cancelar</a>
+  </div>
+</form>
+
+<%- include('partials/footer') %>

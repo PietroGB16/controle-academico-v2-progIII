@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<div class="topo-pagina">
+  <h1>Alunos</h1>
+  <a href="/alunos/novo" class="btn">+ Novo aluno</a>
+</div>
+
+<form action="/alunos" method="GET" class="form-busca">
+  <input type="text" name="busca" placeholder="Buscar aluno pelo nome..." value="<%= busca %>" />
+  <select name="curso">
+    <option value="">Todos os cursos</option>
+    <% cursos.forEach(function(c) { %>
+      <option value="<%= c.id %>" <%= String(cursoSelecionado) === String(c.id) ? 'selected' : '' %>><%= c.nome %></option>
+    <% }); %>
+  </select>
+  <input type="submit" value="Buscar" />
+  <% if (busca || cursoSelecionado) { %>
+    <a href="/alunos" class="link-limpar">limpar</a>
+  <% } %>
+</form>
+
+<% if (alunos.length === 0) { %>
+  <p class="aviso">Nenhum aluno encontrado com esses filtros.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>Curso</th>
+        <th>Ingresso</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% alunos.forEach(function(aluno) { %>
+        <tr>
+          <td><%= aluno.nome %></td>
+          <td><%= aluno.matricula %></td>
+          <td>
+            <!-- Renderização condicional: aluno pode não ter curso vinculado -->
+            <% if (aluno.curso) { %>
+              <%= aluno.curso.nome %>
+            <% } else { %>
+              <em>sem curso</em>
+            <% } %>
+          </td>
+          <td><%= aluno.dataIngresso %></td>
+          <td><span class="badge badge-<%= aluno.status %>"><%= aluno.status %></span></td>
+          <td class="acoes">
+            <a href="/alunos/<%= aluno.id %>/editar">Editar</a>
+            <form action="/alunos/<%= aluno.id %>/excluir" method="POST" onsubmit="return confirm('Excluir este aluno?');">
+              <input type="submit" value="Excluir" class="btn-excluir" />
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>

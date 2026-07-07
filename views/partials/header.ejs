@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= titulo %> · Controle Acadêmico IFRJ</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header id="cabecalho">
+    <div class="marca">
+      <img src="https://raw.githubusercontent.com/PietroGB16/controle-academico-bd1/main/public/img/logo-placeholder.png" alt="Logo IFRJ" class="logo" onerror="this.src='https://placehold.co/40x40/1e5f4d/ffffff?text=IF'" />
+      <span>Controle Acadêmico</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/" class="<%= currentPath === '/' ? 'ativo' : '' %>">Início</a></li>
+        <li><a href="/cursos" class="<%= currentPath.startsWith('/cursos') ? 'ativo' : '' %>">Cursos</a></li>
+        <li><a href="/alunos" class="<%= currentPath.startsWith('/alunos') ? 'ativo' : '' %>">Alunos</a></li>
+        <li><a href="/relatorios" class="<%= currentPath === '/relatorios' ? 'ativo' : '' %>">Relatórios</a></li>
+        <li><a href="/notas" class="<%= currentPath === '/notas' ? 'ativo' : '' %>">Minhas Notas</a></li>
+        <li><a href="/sobre" class="<%= currentPath === '/sobre' ? 'ativo' : '' %>">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="conteudo">

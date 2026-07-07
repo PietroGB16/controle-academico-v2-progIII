@@ -1,0 +1,16 @@
+{
+  "cursos": [
+    { "id": 1, "nome": "Engenharia de Computação", "cargaHoraria": 3600, "coordenador": "Profa. Ana Beatriz Souza" },
+    { "id": 2, "nome": "Técnico em Informática", "cargaHoraria": 1200, "coordenador": "Prof. Carlos Menezes" },
+    { "id": 3, "nome": "Licenciatura em Matemática", "cargaHoraria": 3200, "coordenador": "Profa. Renata Lopes" }
+  ],
+  "alunos": [
+    { "id": 1, "nome": "Pietro Gouveia", "matricula": "2026010001", "cursoId": 1, "dataIngresso": "2026-01-15", "status": "ativo" },
+    { "id": 2, "nome": "Marina Alves", "matricula": "2026010002", "cursoId": 1, "dataIngresso": "2026-01-15", "status": "ativo" },
+    { "id": 3, "nome": "João Pedro Lima", "matricula": "2025020045", "cursoId": 2, "dataIngresso": "2025-08-03", "status": "concluido" },
+    { "id": 4, "nome": "Beatriz Ramos", "matricula": "2024010078", "cursoId": 3, "dataIngresso": "2024-01-20", "status": "trancado" },
+    { "id": 5, "nome": "Lucas Ferreira", "matricula": "2026010003", "cursoId": 1, "dataIngresso": "2026-01-15", "status": "ativo" }
+  ],
+  "nextCursoId": 4,
+  "nextAlunoId": 6
+}

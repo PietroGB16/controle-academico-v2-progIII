@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&auto=format&fit=crop&q=60" alt="Estudantes em sala de aula" class="hero-img" />
+  <div>
+    <h1>Bem-vindo ao Controle Acadêmico</h1>
+    <p>
+      Sistema para acompanhar cursos, alunos e o desempenho acadêmico do
+      Campus Niterói, feito com <strong>Express</strong> e <strong>EJS</strong>.
+    </p>
+    <a href="/alunos/novo" class="btn">+ Cadastrar aluno</a>
+    <a href="/cursos" class="btn btn-secundario">Ver cursos</a>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <h2><%= totalCursos %></h2>
+    <p>Cursos ativos</p>
+  </div>
+  <div class="card">
+    <h2><%= totalAlunos %></h2>
+    <p>Alunos cadastrados</p>
+  </div>
+  <div class="card">
+    <h2><%= alunosAtivos %></h2>
+    <p>Matrículas ativas</p>
+  </div>
+</section>
+
+<section>
+  <h2>Últimos alunos cadastrados</h2>
+
+  <!-- Renderização condicional: mensagem diferente se não houver alunos -->
+  <% if (ultimosAlunos.length === 0) { %>
+    <p class="aviso">Nenhum aluno cadastrado ainda. <a href="/alunos/novo">Cadastre o primeiro!</a></p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Matrícula</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% ultimosAlunos.forEach(function(aluno) { %>
+          <tr>
+            <td><%= aluno.nome %></td>
+            <td><%= aluno.matricula %></td>
+            <td>
+              <span class="badge badge-<%= aluno.status %>"><%= aluno.status %></span>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>

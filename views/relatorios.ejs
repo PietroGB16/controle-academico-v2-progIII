@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<h1>Relatórios</h1>
+
+<section>
+  <h2>Alunos por curso</h2>
+  <table>
+    <thead>
+      <tr><th>Curso</th><th>Total de alunos</th></tr>
+    </thead>
+    <tbody>
+      <% porCurso.forEach(function(linha) { %>
+        <tr>
+          <td><%= linha.curso %></td>
+          <td>
+            <%= linha.total %>
+            <% if (linha.total === 0) { %>
+              <span class="badge badge-trancado">sem alunos</span>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Alunos por status de matrícula</h2>
+  <table>
+    <thead>
+      <tr><th>Status</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <% porStatus.forEach(function(linha) { %>
+        <tr>
+          <td><span class="badge badge-<%= linha.status %>"><%= linha.status %></span></td>
+          <td><%= linha.total %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>
+
+<%- include('partials/footer') %>
