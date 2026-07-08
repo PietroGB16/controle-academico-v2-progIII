@@ -80,3 +80,29 @@ controle-academico-v2/
    incluir na entrega, além do link de colaboração do sandbox.
 
 
+## Como rodar localmente
+
+### Pré-requisitos
+- [Node.js](https://nodejs.org) instalado (versão LTS recomendada)
+
+### Passo a passo
+
+1. Clone o repositório:
+```bash
+   git clone https://github.com/PietroGB16/controle-academico-v2-progIII.git
+   cd controle-academico-v2-progIII
+```
+
+2. Instale as dependências:
+```bash
+   npm install
+```
+
+3. Rode o servidor:
+```bash
+   npm start
+```
+
+4. Abra no navegador:
+http://localhost:3000
+
