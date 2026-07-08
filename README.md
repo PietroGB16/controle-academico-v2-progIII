@@ -79,28 +79,4 @@ controle-academico-v2/
 4. Copie o link público do preview (a URL que abre o site rodando) para
    incluir na entrega, além do link de colaboração do sandbox.
 
-## Vídeo de apresentação (15–30 min)
 
-Sugestão de roteiro (~70% do tempo em código):
-
-1. **(2 min)** Problema real resolvido e visão geral das páginas.
-2. **(3 min)** Estrutura de pastas: `server.js`, `db.js`, `views/`, `public/`.
-3. **(8–10 min)** Código do back-end: rotas do Express, `db.js` lendo/
-   escrevendo o JSON, renderização com EJS e variáveis passadas para a view.
-4. **(3–4 min)** CSS externo: mostrar os diferentes seletores usados e por
-   quê (comentário no topo do arquivo ajuda a guiar essa parte).
-5. **(6–8 min)** `public/js/notas.js`: como o CRUD com `localStorage`
-   funciona (ler, salvar, filtrar, editar por id, `event delegation` no
-   clique de editar/excluir).
-6. **(2–3 min)** Demonstração ao vivo: cadastrar curso/aluno, buscar, editar,
-   excluir, e mexer na tabela de notas.
-7. **(1–2 min)** Fechamento: dificuldades e o que aprendeu.
-
-Grave com Google Drive (upload e compartilhar) ou YouTube como **não
-listado/privado**, e inclua o link na entrega.
-
-## Ideias de evolução (bônus, se sobrar tempo)
-
-- Ordenar a tabela de cursos/alunos clicando no cabeçalho.
-- Exportar a tabela de notas para CSV.
-- Validar matrícula duplicada antes de cadastrar aluno.
