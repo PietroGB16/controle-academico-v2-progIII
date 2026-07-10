@@ -1,4 +1,4 @@
-# Controle Acadêmico v2 — Trabalho de Programação III
+# Controle Acadêmico v2 - Trabalho de Programação III
 
 Evolução do projeto `controle-academico-bd1` (feito para Banco de Dados I),
 agora atendendo aos requisitos do trabalho de **Programação III** (IFRJ Campus
